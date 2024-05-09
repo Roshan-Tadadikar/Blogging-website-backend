@@ -24,6 +24,7 @@ public class Aspects {
     public void  logExeptions(JoinPoint joinPoint, Exception ex){
         log.error(joinPoint.getSignature().getName()+" An exception occured "+ex.getMessage());
         ex.printStackTrace();
+        
     }
 
 //    @Before(value = "execution(* com.example.demo.Controllers.*(..))")

@@ -1,6 +1,7 @@
 package com.example.demo.Controllers;
 //
 //import com.example.demo.Config.JWTTokenHelper;
+import com.example.demo.Config.JWTTokenHelper;
 import com.example.demo.dto.JwtRequest;
 import com.example.demo.dto.JwtResponse;
 import lombok.extern.slf4j.Slf4j;
@@ -50,14 +51,9 @@ public class AuthController {
 
 
     private void doAuthenticate(String email, String password) {
-
-
-
         UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(email, password);
         try {
             manager.authenticate(authentication);
-
-
         } catch (BadCredentialsException e) {
             throw new BadCredentialsException(" Invalid Username or Password  !!");
         }

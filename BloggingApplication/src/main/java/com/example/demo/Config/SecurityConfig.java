@@ -30,9 +30,9 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception{
-       http.csrf(csrf->csrf.disable()).authorizeHttpRequests().anyRequest().authenticated().and().httpBasic();
-       http.authenticationProvider(daoAuthenticationProvider());
-       return http.build();
+       // http.csrf(csrf->csrf.disable()).authorizeHttpRequests().anyRequest().authenticated().and().httpBasic();
+       // http.authenticationProvider(daoAuthenticationProvider());
+       // return http.build();
        http.csrf(csrf -> csrf.disable())
                .authorizeRequests()
                .anyRequest()

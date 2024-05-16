@@ -30,17 +30,17 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception{
-//        http.csrf(csrf->csrf.disable()).authorizeHttpRequests().anyRequest().authenticated().and().httpBasic();
-//        http.authenticationProvider(daoAuthenticationProvider());
-//        return http.build();
-//        http.csrf(csrf -> csrf.disable())
-//                .authorizeRequests()
-//                .anyRequest()
-//                .authenticated()
-//                .and().exceptionHandling(ex -> ex.authenticationEntryPoint(point))
-//                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
-//        http.addFilterBefore(filter, UsernamePasswordAuthenticationFilter.class);
-//        return http.build();
+       http.csrf(csrf->csrf.disable()).authorizeHttpRequests().anyRequest().authenticated().and().httpBasic();
+       http.authenticationProvider(daoAuthenticationProvider());
+       return http.build();
+       http.csrf(csrf -> csrf.disable())
+               .authorizeRequests()
+               .anyRequest()
+               .authenticated()
+               .and().exceptionHandling(ex -> ex.authenticationEntryPoint(point))
+               .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+       http.addFilterBefore(filter, UsernamePasswordAuthenticationFilter.class);
+       return http.build();
         return http.build();
     }
 
